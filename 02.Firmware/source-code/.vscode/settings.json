@@ -1,0 +1,13 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32s3"
+  },
+  "files.associations": {
+    "cst816s.h": "c",
+    "freertos.h": "c",
+    "lvgl.h": "c",
+    "adapter_lcd.h": "c"
+  },
+  "idf.port": "/dev/tty.usbmodem101"
+}
