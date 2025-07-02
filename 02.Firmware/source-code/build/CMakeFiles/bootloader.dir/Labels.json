@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/Users/wangjiaqi/Documents/Github/source-code/build/CMakeFiles/bootloader"
+			"file" : "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/CMakeFiles/bootloader"
 		},
 		{
-			"file" : "/Users/wangjiaqi/Documents/Github/source-code/build/CMakeFiles/bootloader.rule"
+			"file" : "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/CMakeFiles/bootloader.rule"
 		},
 		{
-			"file" : "/Users/wangjiaqi/Documents/Github/source-code/build/CMakeFiles/bootloader-complete.rule"
+			"file" : "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/CMakeFiles/bootloader-complete.rule"
 		},
 		{
-			"file" : "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+			"file" : "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
 		},
 		{
-			"file" : "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+			"file" : "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
 		},
 		{
-			"file" : "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+			"file" : "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
 		},
 		{
-			"file" : "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+			"file" : "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
 		},
 		{
-			"file" : "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+			"file" : "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
 		},
 		{
-			"file" : "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+			"file" : "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
 		},
 		{
-			"file" : "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+			"file" : "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
 		}
 	],
 	"target" : 

@@ -8,6 +8,8 @@
 #include "lvgl.h"
 // #include "st7789.h"
 // #include "cst816t.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 #include "adapter_lcd.h"
 #include <stdio.h>
 #include <inttypes.h>

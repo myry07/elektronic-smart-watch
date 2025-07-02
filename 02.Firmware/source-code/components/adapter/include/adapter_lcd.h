@@ -3,7 +3,6 @@
 
 #include "st7789.h"
 
-
 #include "config.h"
 
 // #define LCD_WIDTH 240

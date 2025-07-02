@@ -10,18 +10,18 @@ if(NOT EXISTS "/Users/wangjiaqi/esp/esp-idf/components/bootloader/subproject")
   file(MAKE_DIRECTORY "/Users/wangjiaqi/esp/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader"
-  "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix"
-  "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/tmp"
-  "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/src/bootloader-stamp"
-  "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/src"
-  "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/src/bootloader-stamp"
+  "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader"
+  "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix"
+  "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/tmp"
+  "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/src/bootloader-stamp"
+  "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/src"
+  "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/Users/wangjiaqi/Documents/Github/source-code/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

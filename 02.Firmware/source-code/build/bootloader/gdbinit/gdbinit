@@ -1,2 +1,2 @@
-source /Users/wangjiaqi/Documents/Github/source-code/build/bootloader/gdbinit/symbols
-source /Users/wangjiaqi/Documents/Github/source-code/build/bootloader/gdbinit/connect
+source /Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader/gdbinit/symbols
+source /Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader/gdbinit/connect

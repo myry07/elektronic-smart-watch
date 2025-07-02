@@ -88,7 +88,7 @@ $<TARGET_FILE:__idf_cst816t>
 $<TARGET_FILE:__idf_cst816s>
 $<TARGET_FILE:__idf_decode>
 $<TARGET_FILE:__idf_lvgl>
+$<TARGET_FILE:__idf_lvgl_port>
 $<TARGET_FILE:__idf_application>
 $<TARGET_FILE:__idf_adapter>
-$<TARGET_FILE:__idf_lvgl_port>
 $<TARGET_FILE:__idf_main>

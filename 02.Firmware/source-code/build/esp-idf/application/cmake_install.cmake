@@ -1,4 +1,4 @@
-# Install script for directory: /Users/wangjiaqi/Documents/Github/source-code/components/application
+# Install script for directory: /Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/components/application
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,6 +40,6 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/wangjiaqi/Documents/Github/source-code/build/esp-idf/application/install_local_manifest.txt"
+  file(WRITE "/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/esp-idf/application/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

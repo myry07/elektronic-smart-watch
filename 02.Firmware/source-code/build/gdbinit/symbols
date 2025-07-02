@@ -13,8 +13,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file /Users/wangjiaqi/Documents/Github/source-code/build/bootloader/bootloader.elf
+    add-symbol-file /Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file /Users/wangjiaqi/Documents/Github/source-code/build/camera-code.elf
+file /Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/camera-code.elf

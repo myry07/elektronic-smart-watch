@@ -10,5 +10,7 @@
 #define LCD_RESET_GPIO 12
 #define LCD_BL_GPIO 1
 
+#define BUTTON_NUM 0
+
 
 #endif

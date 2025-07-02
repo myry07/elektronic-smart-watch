@@ -7,7 +7,14 @@
     "cst816s.h": "c",
     "freertos.h": "c",
     "lvgl.h": "c",
-    "adapter_lcd.h": "c"
+    "adapter_lcd.h": "c",
+    "stdio.h": "c",
+    "config.h": "c",
+    "lcd_pcb_v1.h": "c",
+    "esp_log.h": "c",
+    "ui.h": "c",
+    "task.h": "c",
+    "bread_board.h": "c"
   },
   "idf.port": "/dev/tty.usbmodem101"
 }

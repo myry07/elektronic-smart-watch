@@ -17,4 +17,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file /Users/wangjiaqi/Documents/Github/source-code/build/bootloader/bootloader.elf
+file /Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/bootloader/bootloader.elf

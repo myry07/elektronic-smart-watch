@@ -1,4 +1,7 @@
-idf_component_register(SRCS "lvgl_port.c" 
+idf_component_register(SRCS "ui_page_p1.c" 
+                    "ui_page_p3.c"
+                    "ui_page_p2.c" 
+                    "lvgl_port.c" 
                     "ui_img_btn.c" 
                     "ui_page_lock.c"
                     "ui_page_home.c"

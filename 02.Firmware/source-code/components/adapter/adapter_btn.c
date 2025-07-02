@@ -41,7 +41,7 @@ void button_task(void *arg)
             } else if (btn.click_count == 1 && (now - btn.last_release_time) > DOUBLE_CLICK_TIME_MS) {
                 btn.click_count = 0;
                 ESP_LOGI(TAG, "Single Click (timeout) detected");
-                // if (btn.callback) btn.callback(BUTTON_EVENT_SINGLE_CLICK);
+                if (btn.callback) btn.callback(BUTTON_EVENT_SINGLE_CLICK);
             }
             break;
 
@@ -64,7 +64,7 @@ void button_task(void *arg)
                 btn.state = BTN_LONG_PRESSED;
                 btn.long_press_handled = true;
                 ESP_LOGI(TAG, "Long Press detected");
-                // if (btn.callback) btn.callback(BUTTON_EVENT_LONG_PRESS);
+                if (btn.callback) btn.callback(BUTTON_EVENT_LONG_PRESS);
             }
             break;
 
@@ -86,7 +86,7 @@ void button_task(void *arg)
                         } else if ((now - btn.last_release_time) <= DOUBLE_CLICK_TIME_MS) {
                             btn.click_count = 0;
                             ESP_LOGI(TAG, "Double Click detected");
-                            // if (btn.callback) btn.callback(BUTTON_EVENT_DOUBLE_CLICK);
+                            if (btn.callback) btn.callback(BUTTON_EVENT_DOUBLE_CLICK);
                         } else {
                             btn.click_count = 1;
                             ESP_LOGI(TAG, "Single Click detected");
@@ -123,18 +123,8 @@ void button_register(button_callback_t cb)
     gpio_config(&cfg);
 }
 
-void button_callback(button_event_t event)
+void adapter_btn_init(button_callback_t cb)
 {
-    //发送给led任务
-    // TaskHandle_t h = led_get_task_handle();
-    // if (h)
-    // {
-    //     xTaskNotify(h, event, eSetValueWithOverwrite);
-    // }
-}
-
-void adpater_btn_init(void)
-{
-    button_register(button_callback); // 注册事件
+    button_register(cb);
     xTaskCreatePinnedToCore(button_task, "btn", 2048, NULL, 5, &btn_handle, 1);
 }

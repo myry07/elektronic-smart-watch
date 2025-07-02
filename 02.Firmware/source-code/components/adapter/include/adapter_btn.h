@@ -1,11 +1,11 @@
 #ifndef ADAPTER_BTN_H_
 #define ADAPTER_BTN_H_
 
-#define BUTTON_NUM 0
-
 #include "driver/gpio.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+
+#include "config.h"
 
 extern TaskHandle_t btn_handle;
 
@@ -28,13 +28,13 @@ typedef enum {
 // 回调函数类型
 typedef void (*button_callback_t)(button_event_t event);
 
+void adapter_btn_init(button_callback_t cb);
+
 // 注册用户回调（主程序调用）
 void button_register(button_callback_t cb);
 
 // 主任务
 void button_task(void *arg);
 
-void adpater_btn_init(void);
-void button_callback(button_event_t event);
 
 #endif

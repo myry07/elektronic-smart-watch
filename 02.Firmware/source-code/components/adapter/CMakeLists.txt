@@ -10,4 +10,5 @@ idf_component_register(SRCS "adapter_lcd.c" "adapter_btn.c"
                     lvgl
                     freertos
                     esp_timer
-                    application)
+                    application
+                    lvgl_port)
