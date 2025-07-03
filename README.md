@@ -13,7 +13,7 @@ RTC：PCF85063ATL
 </div>
 
 <div align=center>
-	<img src="https://github.com/myry07/elektronic-smart-watch/blob/main/03.Fotos/p22.jpg" width="400" height="400">
+	<img src="https://github.com/myry07/elektronic-smart-watch/blob/main/03.Fotos/p2.jpg" width="400" height="400">
 </div>
 
 <div align=center>
