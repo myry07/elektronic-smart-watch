@@ -579,21 +579,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/esp-idf/lvgl_port/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/esp-idf/application/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/esp-idf/adapter/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/esp-idf/main/cmake_install.cmake")
 endif()
 

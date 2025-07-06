@@ -14,7 +14,12 @@
     "esp_log.h": "c",
     "ui.h": "c",
     "task.h": "c",
-    "bread_board.h": "c"
+    "bread_board.h": "c",
+    "adapter_storage.h": "c",
+    "adapter_btn.h": "c",
+    "i2s_std.h": "c",
+    "adapter_i2s.h": "c",
+    "event_groups.h": "c"
   },
   "idf.port": "/dev/tty.usbmodem101"
 }

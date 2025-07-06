@@ -88,7 +88,4 @@
 /Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/esp-idf/cst816s/libcst816s.a
 /Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/esp-idf/decode/libdecode.a
 /Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/esp-idf/lvgl/liblvgl.a
-/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/esp-idf/lvgl_port/liblvgl_port.a
-/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/esp-idf/application/libapplication.a
-/Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/esp-idf/adapter/libadapter.a
 /Users/wangjiaqi/Documents/Github/elektronic-smart-watch/02.Firmware/source-code/build/esp-idf/main/libmain.a
