@@ -1,0 +1,68 @@
+Added Component: Designator=C?(C0402)
+Added Component: Designator=C?(C0402)
+Added Component: Designator=C?(C0402)
+Added Component: Designator=C?(C0402)
+Added Component: Designator=L?(L0402-SMD)
+Added Component: Designator=LED?(LED0603-BL)
+Added Component: Designator=R?(R0402)
+Added Component: Designator=R?(R0402)
+Added Component: Designator=U?(QFN-40_L5.0-W5.0-P0.40-TL-EP3.4)
+Added Component: Designator=X?(OSC-SMD_4P-L3.2-W2.5-BL_SIT8008BI)
+Added Pin To Net: NetName=ALDO1 Pin=C?-2
+Added Pin To Net: NetName=ALDO1 Pin=U?-18
+Added Net: Name=ALDO1
+Added Pin To Net: NetName=ALDO2 Pin=U?-19
+Added Net: Name=ALDO2
+Added Pin To Net: NetName=ALDO3 Pin=U?-16
+Added Net: Name=ALDO3
+Added Pin To Net: NetName=ALDO4 Pin=U?-15
+Added Net: Name=ALDO4
+Added Pin To Net: NetName=DCDC1 Pin=L?-2
+Added Pin To Net: NetName=DCDC1 Pin=U?-21
+Added Net: Name=DCDC1
+Added Pin To Net: NetName=EN Pin=U?-29
+Added Net: Name=EN
+Added Pin To Net: NetName=GND Pin=C?-1
+Added Pin To Net: NetName=GND Pin=C?-1
+Added Pin To Net: NetName=GND Pin=C?-1
+Added Pin To Net: NetName=GND Pin=C?-1
+Added Pin To Net: NetName=GND Pin=R?-2
+Added Pin To Net: NetName=GND Pin=U?-3
+Added Pin To Net: NetName=GND Pin=U?-41
+Added Net: Name=GND
+Added Pin To Net: NetName=IRQ Pin=U?-38
+Added Net: Name=IRQ
+Added Pin To Net: NetName=NetC?_2 Pin=C?-2
+Added Pin To Net: NetName=NetC?_2 Pin=U?-2
+Added Net: Name=NetC?_2
+Added Pin To Net: NetName=NetL?_1 Pin=L?-1
+Added Pin To Net: NetName=NetL?_1 Pin=U?-22
+Added Net: Name=NetL?_1
+Added Pin To Net: NetName=NetLED?_2 Pin=LED?-2
+Added Pin To Net: NetName=NetLED?_2 Pin=R?-2
+Added Net: Name=NetLED?_2
+Added Pin To Net: NetName=NetR?_1 Pin=R?-1
+Added Pin To Net: NetName=NetR?_1 Pin=U?-31
+Added Net: Name=NetR?_1
+Added Pin To Net: NetName=ON Pin=U?-30
+Added Net: Name=ON
+Added Pin To Net: NetName=SCL Pin=U?-39
+Added Net: Name=SCL
+Added Pin To Net: NetName=SDA Pin=U?-40
+Added Net: Name=SDA
+Added Pin To Net: NetName=VBAT Pin=U?-33
+Added Net: Name=VBAT
+Added Pin To Net: NetName=VBUS Pin=U?-37
+Added Net: Name=VBUS
+Added Pin To Net: NetName=VRTC Pin=U?-28
+Added Net: Name=VRTC
+Added Pin To Net: NetName=VSYS Pin=C?-2
+Added Pin To Net: NetName=VSYS Pin=C?-2
+Added Pin To Net: NetName=VSYS Pin=R?-1
+Added Pin To Net: NetName=VSYS Pin=U?-17
+Added Pin To Net: NetName=VSYS Pin=U?-23
+Added Pin To Net: NetName=VSYS Pin=U?-34
+Added Pin To Net: NetName=VSYS Pin=U?-36
+Added Net: Name=VSYS
+Added Class: Name=Sheet2
+Added Rule: Name=Schematic Supply Nets

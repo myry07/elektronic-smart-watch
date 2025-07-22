@@ -1,0 +1,34 @@
+Removed Pin From Net: NetName=DCDC3 Pin=L1-1
+Removed Pin From Net: NetName=DCDC4 Pin=L2-1
+Removed Pin From Net: NetName=DCDC2 Pin=L3-1
+Removed Pin From Net: NetName=DCDC1 Pin=L4-2
+Removed Member From Class: ClassName=Sheet2 Member=L1
+Removed Member From Class: ClassName=Sheet2 Member=L2
+Removed Member From Class: ClassName=Sheet2 Member=L3
+Removed Member From Class: ClassName=Sheet2 Member=L4
+Added Component: Designator=U2(IND-SMD_L2.5-W2.0_WPN252012H)
+Added Component: Designator=U3(IND-SMD_L2.5-W2.0_WPN252012H)
+Added Component: Designator=U4(IND-SMD_L2.5-W2.0_WPN252012H)
+Added Component: Designator=U5(IND-SMD_L2.5-W2.0_WPN252012H)
+Added Pin To Net: NetName=DCDC3 Pin=U2-1
+Added Pin To Net: NetName=DCDC4 Pin=U3-1
+Added Pin To Net: NetName=DCDC2 Pin=U4-2
+Added Pin To Net: NetName=DCDC1 Pin=U5-2
+Added Pin To Net: NetName=NetU1_5 Pin=U1-5
+Added Pin To Net: NetName=NetU1_5 Pin=U2-2
+Added Net: Name=NetU1_5
+Added Pin To Net: NetName=NetU1_8 Pin=U1-8
+Added Pin To Net: NetName=NetU1_8 Pin=U3-2
+Added Net: Name=NetU1_8
+Added Pin To Net: NetName=NetU1_22 Pin=U1-22
+Added Pin To Net: NetName=NetU1_22 Pin=U5-1
+Added Net: Name=NetU1_22
+Added Pin To Net: NetName=NetU1_25 Pin=U1-25
+Added Pin To Net: NetName=NetU1_25 Pin=U4-1
+Added Net: Name=NetU1_25
+Added Member To Class: ClassName=Sheet2 Member=Component C1 1uF
+Added Member To Class: ClassName=Sheet2 Member=Component R1 R0402
+Added Member To Class: ClassName=Sheet2 Member=Component U2 WPN252012H1R0MT
+Added Member To Class: ClassName=Sheet2 Member=Component U3 WPN252012H1R0MT
+Added Member To Class: ClassName=Sheet2 Member=Component U4 WPN252012H1R0MT
+Added Member To Class: ClassName=Sheet2 Member=Component U5 WPN252012H1R0MT

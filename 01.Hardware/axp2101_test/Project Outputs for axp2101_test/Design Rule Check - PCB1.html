@@ -1,0 +1,499 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD25_\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">21.07.2025</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">15:10:45</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc" class="file"><acronym title="C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc">C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">36</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">13</td></tr>
+</table>
+</td>
+</table><a name="IDWTLMFA5YDIYCJ5GBH25OQVZAWHJWBGV5DPUAYJKHSHCWWFZYBKLN"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSP3WIVZM0RFOGAED4CPXJLYOXK03UAJF4YI3DXEVDYZPKXQVLWQK">Zero hole size multi-layer pad(s) detected</a></td>
+<td class="column2">18</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSZTGFUZ2IIA3LQN01K4FFEUKGBEUAKRP214KOGKMAZ0F412XUIZE">Multilayer Pads with 0 size Hole found</a></td>
+<td class="column2">18</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">36</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEXMI3N4TX5PFHHYEJ04A5IZMGM0DB1KQWVXH5KKFXORNLKQVADFG">Clearance Constraint (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDD3M00LMKKXGIH0BOP21ANOEOCCPQOKKFGHZOJOJS2PYRIH1NNNN">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2E3RZQJNTARGEIAB0D2QXVG4GD5V50PMX0PB5BDCRFKAQOUVBX2L">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGWKQDRAER4V5P0K3P2QQ5MJFUKAD4JDGXTISMTLQNRMT2BTRMM2E">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUOJS15FZPDOPOU25QPQEPR4Y1I3ZJGNYNNRAUSDNPDNUMBH35APE">Width Constraint (Min=0.254mm) (Max=1mm) (Preferred=0.5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLKWCYIJXTTSEMEI02DXGMYUTFDH2XPBF2J0KQEBLWAGUUVWXAZF">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLIFIQSGPMAPSMNJJR11L5Y2YYGOKNKP4GNYWQSBY5HDTHVRD101F">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQPOSBKYBVDILDFUJVBLYB3JSVCNJKEO0IEWD0QBCHF1FZY31YNTJ">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKFXTJNHDRRK3DXKJP1YDUERCOIOW2KUYVN0QI5LA0YZYUYD2US0F">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGINVQOPMO2IYIUFRQTY3PKMCND5AXDY1OICNWFRRWVCDN5H1LWH">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNRAGEHQ3OAATLOQJ5LBXKFZSBFMXUDYJYSC0WOI4BBJ30MW2XLMI">Silk To Solder Mask (Clearance=0.1mm) (IsPad),(All)</a></td>
+<td class="column2">9</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMYPSFDZVRPLSITAJTDGIQ0HHANMF0LIXVZWN22NP1WPDDTUCV4MB">Silk to Silk (Clearance=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZRZDQFO3G0XDHUJPAL1NYN40CD4EDUVJKOJNQJCEP2SFEUUNPWXM">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID05IR3ZJ51OOIFMWBJMZWFCNAMIYCHVM0YF0VJ1FWRXDR0FO1C1MK">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">13</td>
+</tr>
+</table><br><a name="ID2ODGUYK5XE5VMDTDZM2IZVSGXPZ32AFLYRKCUOHQGBPEDWCLIJNE"><h2>Warnings</h2></a><a name="IDSP3WIVZM0RFOGAED4CPXJLYOXK03UAJF4YI3DXEVDYZPKXQVLWQK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Zero hole size multi-layer pad(s) detected</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.495mil|Location2.X=5976.172mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.495mil|Location2.X=5976.172mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(150.745mm,67.031mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5861.754mil|Location2.X=5976.172mil|Location1.Y=2597.69mil|Location2.Y=2948.917mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5861.754mil|Location2.X=5976.172mil|Location1.Y=2597.69mil|Location2.Y=2948.917mil|Absolute=True">Net ALDO2</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5418.959mil|Location2.X=5501.637mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5418.959mil|Location2.X=5501.637mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(138.692mm,67.031mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5418.959mil|Location2.X=5731.832mil|Location1.Y=2597.69mil|Location2.Y=2980.415mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5418.959mil|Location2.X=5731.832mil|Location1.Y=2597.69mil|Location2.Y=2980.415mil|Absolute=True">Net DCDC4</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5419.746mil|Location2.X=5502.423mil|Location1.Y=2835.104mil|Location2.Y=2917.781mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5419.746mil|Location2.X=5502.423mil|Location1.Y=2835.104mil|Location2.Y=2917.781mil|Absolute=True">Pad Free-(138.712mm,73.062mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5419.746mil|Location2.X=6037.628mil|Location1.Y=2828.637mil|Location2.Y=3189.13mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5419.746mil|Location2.X=6037.628mil|Location1.Y=2828.637mil|Location2.Y=3189.13mil|Absolute=True">Net VSYS</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5607.995mil|Location2.X=5690.672mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5607.995mil|Location2.X=5690.672mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(143.493mm,67.031mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5607.995mil|Location2.X=5810.576mil|Location1.Y=2597.69mil|Location2.Y=2948.917mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5607.995mil|Location2.X=5810.576mil|Location1.Y=2597.69mil|Location2.Y=2948.917mil|Absolute=True">Net ALDO4</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5703.162mil|Location2.X=5785.839mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5703.162mil|Location2.X=5785.839mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(145.91mm,67.031mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5703.162mil|Location2.X=5826.316mil|Location1.Y=2597.69mil|Location2.Y=2948.917mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5703.162mil|Location2.X=5826.316mil|Location1.Y=2597.69mil|Location2.Y=2948.917mil|Absolute=True">Net ALDO3</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5798.328mil|Location2.X=5881.005mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5798.328mil|Location2.X=5881.005mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(148.328mm,67.031mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5798.328mil|Location2.X=5916.89mil|Location1.Y=2597.69mil|Location2.Y=2948.917mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5798.328mil|Location2.X=5916.89mil|Location1.Y=2597.69mil|Location2.Y=2948.917mil|Absolute=True">Net ALDO1</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5988.661mil|Location2.X=6071.339mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5988.661mil|Location2.X=6071.339mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(153.162mm,67.031mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5424.232mil|Location2.X=6141.944mil|Location1.Y=2597.69mil|Location2.Y=3287.13mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5424.232mil|Location2.X=6141.944mil|Location1.Y=2597.69mil|Location2.Y=3287.13mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6103.858mil|Location2.X=6186.535mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6103.858mil|Location2.X=6186.535mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(156.088mm,67.031mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.248mil|Location2.X=6186.535mil|Location1.Y=2597.69mil|Location2.Y=2964.665mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.248mil|Location2.X=6186.535mil|Location1.Y=2597.69mil|Location2.Y=2964.665mil|Absolute=True">Net DCDC1</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6104.472mil|Location2.X=6187.149mil|Location1.Y=2698.894mil|Location2.Y=2781.571mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6104.472mil|Location2.X=6187.149mil|Location1.Y=2698.894mil|Location2.Y=2781.571mil|Absolute=True">Pad Free-(156.104mm,69.602mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.248mil|Location2.X=6187.149mil|Location1.Y=2698.894mil|Location2.Y=3185.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.248mil|Location2.X=6187.149mil|Location1.Y=2698.894mil|Location2.Y=3185.717mil|Absolute=True">Net DCDC2</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6093.4mil|Location2.X=6176.077mil|Location1.Y=3185.733mil|Location2.Y=3268.41mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6093.4mil|Location2.X=6176.077mil|Location1.Y=3185.733mil|Location2.Y=3268.41mil|Absolute=True">Pad Free-(155.822mm,81.968mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.248mil|Location2.X=6176.077mil|Location1.Y=3063.093mil|Location2.Y=3268.41mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.248mil|Location2.X=6176.077mil|Location1.Y=3063.093mil|Location2.Y=3268.41mil|Absolute=True">Net VRTC</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6088.25mil|Location2.X=6170.927mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6088.25mil|Location2.X=6170.927mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(155.692mm,84.606mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.248mil|Location2.X=6170.927mil|Location1.Y=3078.843mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.248mil|Location2.X=6170.927mil|Location1.Y=3078.843mil|Location2.Y=3372.295mil|Absolute=True">Net EN</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5993.893mil|Location2.X=6076.57mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5993.893mil|Location2.X=6076.57mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(153.295mm,84.606mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.248mil|Location2.X=6076.57mil|Location1.Y=3094.593mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.248mil|Location2.X=6076.57mil|Location1.Y=3094.593mil|Location2.Y=3372.295mil|Absolute=True">Net ON</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5899.535mil|Location2.X=5982.213mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5899.535mil|Location2.X=5982.213mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(150.898mm,84.606mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5826.948mil|Location2.X=5982.213mil|Location1.Y=3110.333mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5826.948mil|Location2.X=5982.213mil|Location1.Y=3110.333mil|Location2.Y=3372.295mil|Absolute=True">Net VBAT</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5805.178mil|Location2.X=5887.855mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5805.178mil|Location2.X=5887.855mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(148.502mm,84.606mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5741.731mil|Location2.X=5887.855mil|Location1.Y=3110.333mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5741.731mil|Location2.X=5887.855mil|Location1.Y=3110.333mil|Location2.Y=3372.295mil|Absolute=True">Net VBUS</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5710.821mil|Location2.X=5793.498mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5710.821mil|Location2.X=5793.498mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(146.105mm,84.606mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5687.651mil|Location2.X=5793.498mil|Location1.Y=3110.333mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5687.651mil|Location2.X=5793.498mil|Location1.Y=3110.333mil|Location2.Y=3372.295mil|Absolute=True">Net IRQ</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5616.464mil|Location2.X=5699.141mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5616.464mil|Location2.X=5699.141mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(143.708mm,84.606mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5616.464mil|Location2.X=5763.326mil|Location1.Y=3110.333mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5616.464mil|Location2.X=5763.326mil|Location1.Y=3110.333mil|Location2.Y=3372.295mil|Absolute=True">Net SCL</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5522.107mil|Location2.X=5604.784mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5522.107mil|Location2.X=5604.784mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(141.312mm,84.606mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5522.107mil|Location2.X=5747.576mil|Location1.Y=3110.333mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5522.107mil|Location2.X=5747.576mil|Location1.Y=3110.333mil|Location2.Y=3372.295mil|Absolute=True">Net SDA</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5427.749mil|Location2.X=5510.427mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5427.749mil|Location2.X=5510.427mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(138.915mm,84.606mm) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5427.749mil|Location2.X=5731.832mil|Location1.Y=3016.141mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5427.749mil|Location2.X=5731.832mil|Location1.Y=3016.141mil|Location2.Y=3372.295mil|Absolute=True">Net DCDC3</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDSZTGFUZ2IIA3LQN01K4FFEUKGBEUAKRP214KOGKMAZ0F412XUIZE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Multilayer Pads with 0 size Hole found</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.495mil|Location2.X=5976.172mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5893.495mil|Location2.X=5976.172mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(150.745mm,67.031mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5418.959mil|Location2.X=5501.637mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5418.959mil|Location2.X=5501.637mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(138.692mm,67.031mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5419.746mil|Location2.X=5502.423mil|Location1.Y=2835.104mil|Location2.Y=2917.781mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5419.746mil|Location2.X=5502.423mil|Location1.Y=2835.104mil|Location2.Y=2917.781mil|Absolute=True">Pad Free-(138.712mm,73.062mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5607.995mil|Location2.X=5690.672mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5607.995mil|Location2.X=5690.672mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(143.493mm,67.031mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5703.162mil|Location2.X=5785.839mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5703.162mil|Location2.X=5785.839mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(145.91mm,67.031mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5798.328mil|Location2.X=5881.005mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5798.328mil|Location2.X=5881.005mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(148.328mm,67.031mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5988.661mil|Location2.X=6071.339mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5988.661mil|Location2.X=6071.339mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(153.162mm,67.031mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6103.858mil|Location2.X=6186.535mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6103.858mil|Location2.X=6186.535mil|Location1.Y=2597.69mil|Location2.Y=2680.367mil|Absolute=True">Pad Free-(156.088mm,67.031mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6104.472mil|Location2.X=6187.149mil|Location1.Y=2698.894mil|Location2.Y=2781.571mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6104.472mil|Location2.X=6187.149mil|Location1.Y=2698.894mil|Location2.Y=2781.571mil|Absolute=True">Pad Free-(156.104mm,69.602mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6093.4mil|Location2.X=6176.077mil|Location1.Y=3185.733mil|Location2.Y=3268.41mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6093.4mil|Location2.X=6176.077mil|Location1.Y=3185.733mil|Location2.Y=3268.41mil|Absolute=True">Pad Free-(155.822mm,81.968mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6088.25mil|Location2.X=6170.927mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6088.25mil|Location2.X=6170.927mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(155.692mm,84.606mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5993.893mil|Location2.X=6076.57mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5993.893mil|Location2.X=6076.57mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(153.295mm,84.606mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5899.535mil|Location2.X=5982.213mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5899.535mil|Location2.X=5982.213mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(150.898mm,84.606mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5805.178mil|Location2.X=5887.855mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5805.178mil|Location2.X=5887.855mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(148.502mm,84.606mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5710.821mil|Location2.X=5793.498mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5710.821mil|Location2.X=5793.498mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(146.105mm,84.606mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5616.464mil|Location2.X=5699.141mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5616.464mil|Location2.X=5699.141mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(143.708mm,84.606mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5522.107mil|Location2.X=5604.784mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5522.107mil|Location2.X=5604.784mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(141.312mm,84.606mm) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5427.749mil|Location2.X=5510.427mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5427.749mil|Location2.X=5510.427mil|Location1.Y=3289.617mil|Location2.Y=3372.295mil|Absolute=True">Pad Free-(138.915mm,84.606mm) on Multi-Layer</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDGINVQOPMO2IYIUFRQTY3PKMCND5AXDY1OICNWFRRWVCDN5H1LWH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5809.946mil|Location2.X=5815.133mil|Location1.Y=2916.796mil|Location2.Y=2921.983mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5809.946mil|Location2.X=5815.133mil|Location1.Y=2916.796mil|Location2.Y=2921.983mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.0998mm (3.928mil) &lt; 0.1mm (3.937mil)) Between Pad U1-15(147.439mm,74.452mm) on Top Layer And Pad U1-16(147.838mm,74.452mm) on Top Layer [Top Solder] Mask Sliver [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5896.56mil|Location2.X=5901.747mil|Location1.Y=3027.036mil|Location2.Y=3032.223mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5896.56mil|Location2.X=5901.747mil|Location1.Y=3027.036mil|Location2.Y=3032.223mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.0998mm (3.928mil) &lt; 0.1mm (3.937mil)) Between Pad U1-25(150.139mm,76.753mm) on Top Layer And Pad U1-26(150.139mm,77.152mm) on Top Layer [Top Solder] Mask Sliver [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5809.946mil|Location2.X=5815.133mil|Location1.Y=3113.646mil|Location2.Y=3118.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5809.946mil|Location2.X=5815.133mil|Location1.Y=3113.646mil|Location2.Y=3118.833mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.0998mm (3.928mil) &lt; 0.1mm (3.937mil)) Between Pad U1-35(147.838mm,79.452mm) on Top Layer And Pad U1-36(147.439mm,79.452mm) on Top Layer [Top Solder] Mask Sliver [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5699.71mil|Location2.X=5704.897mil|Location1.Y=3027.036mil|Location2.Y=3032.223mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5699.71mil|Location2.X=5704.897mil|Location1.Y=3027.036mil|Location2.Y=3032.223mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.0998mm (3.928mil) &lt; 0.1mm (3.937mil)) Between Pad U1-5(145.139mm,77.152mm) on Top Layer And Pad U1-6(145.139mm,76.753mm) on Top Layer [Top Solder] Mask Sliver [0.1mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDNRAGEHQ3OAATLOQJ5LBXKFZSBFMXUDYJYSC0WOI4BBJ30MW2XLMI"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.1mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5455.545mil|Location2.X=5460.732mil|Location1.Y=2677.113mil|Location2.Y=2682.3mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5455.545mil|Location2.X=5460.732mil|Location1.Y=2677.113mil|Location2.Y=2682.3mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.066mm &lt; 0.1mm) Between Arc (138.637mm,68.535mm) on Top Overlay And Pad Free-(138.692mm,67.031mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.066mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5487.041mil|Location2.X=5492.228mil|Location1.Y=2677.113mil|Location2.Y=2682.3mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5487.041mil|Location2.X=5492.228mil|Location1.Y=2677.113mil|Location2.Y=2682.3mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.066mm &lt; 0.1mm) Between Arc (139.437mm,68.535mm) on Top Overlay And Pad Free-(138.692mm,67.031mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.066mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5745.898mil|Location2.X=5749.522mil|Location1.Y=3285.541mil|Location2.Y=3289.166mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5745.898mil|Location2.X=5749.522mil|Location1.Y=3285.541mil|Location2.Y=3289.166mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Arc (145.992mm,83.189mm) on Top Overlay And Pad Free-(146.105mm,84.606mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5777.395mil|Location2.X=5781.019mil|Location1.Y=3285.541mil|Location2.Y=3289.166mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5777.395mil|Location2.X=5781.019mil|Location1.Y=3285.541mil|Location2.Y=3289.166mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Arc (146.792mm,83.189mm) on Top Overlay And Pad Free-(146.105mm,84.606mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6101.894mil|Location2.X=6107.081mil|Location1.Y=3184.575mil|Location2.Y=3189.762mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6101.894mil|Location2.X=6107.081mil|Location1.Y=3184.575mil|Location2.Y=3189.762mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.027mm &lt; 0.1mm) Between Arc (155.054mm,80.504mm) on Top Overlay And Pad Free-(155.822mm,81.968mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6133.39mil|Location2.X=6138.577mil|Location1.Y=3184.575mil|Location2.Y=3189.762mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6133.39mil|Location2.X=6138.577mil|Location1.Y=3184.575mil|Location2.Y=3189.762mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.027mm &lt; 0.1mm) Between Arc (155.854mm,80.504mm) on Top Overlay And Pad Free-(155.822mm,81.968mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5455.543mil|Location2.X=5460.73mil|Location1.Y=2677.113mil|Location2.Y=2682.3mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5455.543mil|Location2.X=5460.73mil|Location1.Y=2677.113mil|Location2.Y=2682.3mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.066mm &lt; 0.1mm) Between Pad Free-(138.692mm,67.031mm) on Multi-Layer And Track (138.637mm,68.225mm)(139.437mm,68.225mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.066mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5745.898mil|Location2.X=5749.522mil|Location1.Y=3285.541mil|Location2.Y=3289.166mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5745.898mil|Location2.X=5749.522mil|Location1.Y=3285.541mil|Location2.Y=3289.166mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad Free-(146.105mm,84.606mm) on Multi-Layer And Track (145.992mm,83.499mm)(146.792mm,83.499mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6101.895mil|Location2.X=6107.082mil|Location1.Y=3184.575mil|Location2.Y=3189.762mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6101.895mil|Location2.X=6107.082mil|Location1.Y=3184.575mil|Location2.Y=3189.762mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.027mm &lt; 0.1mm) Between Pad Free-(155.822mm,81.968mm) on Multi-Layer And Track (155.054mm,80.814mm)(155.854mm,80.814mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.027mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

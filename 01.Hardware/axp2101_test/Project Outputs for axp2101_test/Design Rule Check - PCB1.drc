@@ -1,0 +1,104 @@
+Protel Design System Design Rule Check
+PCB File : C:\myRepo\elektronic-smart-watch\01.Hardware\axp2101_test\PCB1.PcbDoc
+Date     : 21.07.2025
+Time     : 15:10:45
+
+WARNING: Zero hole size multi-layer pad(s) detected
+   Pad Free-(150.745mm,67.031mm) on Multi-Layer on Net ALDO2
+   Pad Free-(138.692mm,67.031mm) on Multi-Layer on Net DCDC4
+   Pad Free-(138.712mm,73.062mm) on Multi-Layer on Net VSYS
+   Pad Free-(143.493mm,67.031mm) on Multi-Layer on Net ALDO4
+   Pad Free-(145.91mm,67.031mm) on Multi-Layer on Net ALDO3
+   Pad Free-(148.328mm,67.031mm) on Multi-Layer on Net ALDO1
+   Pad Free-(153.162mm,67.031mm) on Multi-Layer on Net GND
+   Pad Free-(156.088mm,67.031mm) on Multi-Layer on Net DCDC1
+   Pad Free-(156.104mm,69.602mm) on Multi-Layer on Net DCDC2
+   Pad Free-(155.822mm,81.968mm) on Multi-Layer on Net VRTC
+   Pad Free-(155.692mm,84.606mm) on Multi-Layer on Net EN
+   Pad Free-(153.295mm,84.606mm) on Multi-Layer on Net ON
+   Pad Free-(150.898mm,84.606mm) on Multi-Layer on Net VBAT
+   Pad Free-(148.502mm,84.606mm) on Multi-Layer on Net VBUS
+   Pad Free-(146.105mm,84.606mm) on Multi-Layer on Net IRQ
+   Pad Free-(143.708mm,84.606mm) on Multi-Layer on Net SCL
+   Pad Free-(141.312mm,84.606mm) on Multi-Layer on Net SDA
+   Pad Free-(138.915mm,84.606mm) on Multi-Layer on Net DCDC3
+
+WARNING: Multilayer Pads with 0 size Hole found
+   Pad Free-(150.745mm,67.031mm) on Multi-Layer
+   Pad Free-(138.692mm,67.031mm) on Multi-Layer
+   Pad Free-(138.712mm,73.062mm) on Multi-Layer
+   Pad Free-(143.493mm,67.031mm) on Multi-Layer
+   Pad Free-(145.91mm,67.031mm) on Multi-Layer
+   Pad Free-(148.328mm,67.031mm) on Multi-Layer
+   Pad Free-(153.162mm,67.031mm) on Multi-Layer
+   Pad Free-(156.088mm,67.031mm) on Multi-Layer
+   Pad Free-(156.104mm,69.602mm) on Multi-Layer
+   Pad Free-(155.822mm,81.968mm) on Multi-Layer
+   Pad Free-(155.692mm,84.606mm) on Multi-Layer
+   Pad Free-(153.295mm,84.606mm) on Multi-Layer
+   Pad Free-(150.898mm,84.606mm) on Multi-Layer
+   Pad Free-(148.502mm,84.606mm) on Multi-Layer
+   Pad Free-(146.105mm,84.606mm) on Multi-Layer
+   Pad Free-(143.708mm,84.606mm) on Multi-Layer
+   Pad Free-(141.312mm,84.606mm) on Multi-Layer
+   Pad Free-(138.915mm,84.606mm) on Multi-Layer
+
+Processing Rule : Clearance Constraint (Gap=0.1mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=1mm) (Preferred=0.5mm) (All)
+Rule Violations :0
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (0.0998mm (3.928mil) < 0.1mm (3.937mil)) Between Pad U1-15(147.439mm,74.452mm) on Top Layer And Pad U1-16(147.838mm,74.452mm) on Top Layer [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.0998mm (3.928mil) < 0.1mm (3.937mil)) Between Pad U1-25(150.139mm,76.753mm) on Top Layer And Pad U1-26(150.139mm,77.152mm) on Top Layer [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.0998mm (3.928mil) < 0.1mm (3.937mil)) Between Pad U1-35(147.838mm,79.452mm) on Top Layer And Pad U1-36(147.439mm,79.452mm) on Top Layer [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.0998mm (3.928mil) < 0.1mm (3.937mil)) Between Pad U1-5(145.139mm,77.152mm) on Top Layer And Pad U1-6(145.139mm,76.753mm) on Top Layer [Top Solder] Mask Sliver [0.1mm]
+Rule Violations :4
+
+Processing Rule : Silk To Solder Mask (Clearance=0.1mm) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (0.066mm < 0.1mm) Between Arc (138.637mm,68.535mm) on Top Overlay And Pad Free-(138.692mm,67.031mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.066mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.066mm < 0.1mm) Between Arc (139.437mm,68.535mm) on Top Overlay And Pad Free-(138.692mm,67.031mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.066mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.1mm) Between Arc (145.992mm,83.189mm) on Top Overlay And Pad Free-(146.105mm,84.606mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.1mm) Between Arc (146.792mm,83.189mm) on Top Overlay And Pad Free-(146.105mm,84.606mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.027mm < 0.1mm) Between Arc (155.054mm,80.504mm) on Top Overlay And Pad Free-(155.822mm,81.968mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.027mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.027mm < 0.1mm) Between Arc (155.854mm,80.504mm) on Top Overlay And Pad Free-(155.822mm,81.968mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.027mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.066mm < 0.1mm) Between Pad Free-(138.692mm,67.031mm) on Multi-Layer And Track (138.637mm,68.225mm)(139.437mm,68.225mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.066mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.1mm) Between Pad Free-(146.105mm,84.606mm) on Multi-Layer And Track (145.992mm,83.499mm)(146.792mm,83.499mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.027mm < 0.1mm) Between Pad Free-(155.822mm,81.968mm) on Multi-Layer And Track (155.054mm,80.814mm)(155.854mm,80.814mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.027mm]
+Rule Violations :9
+
+Processing Rule : Silk to Silk (Clearance=0.1mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 13
+Waived Violations : 0
+Time Elapsed        : 00:00:00
